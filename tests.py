@@ -40,7 +40,7 @@ class Exercicio1TestSuite(unittest.TestCase):
     def test_should_get_converted_value_correctly(self):
         data = self.open_reference_file("converted_value.xml")
         converted_value = data_parser.parse_converted_currency(data)
-        self.assertEqual(('492.0000000', 200), converted_value)
+        self.assertEqual(('492.0', 200), converted_value)
     
     # Test the whole flow and verify if 100 USD converted in BRL is a value greater than 300
     def test_should_get_value_correctly(self):

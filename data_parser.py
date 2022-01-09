@@ -12,7 +12,6 @@ Tip: If you want to see jsonschema output for each error you can put a print(err
 '''
 def validate_input(content):
     json_content = get_json_content(content)
-    print(json_content)
     if not json_content:
         return False
     try:
@@ -120,4 +119,9 @@ def parse_converted_currency(page):
     if not converted_value:
         return False
     
-    return converted_value.text, 200
+    try:
+        float_output = float(converted_value.text)
+    except:
+        return False
+    
+    return str(float_output), 200
