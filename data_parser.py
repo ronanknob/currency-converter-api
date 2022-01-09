@@ -12,7 +12,6 @@ Tip: If you want to see jsonschema output for each error you can put a print(err
 '''
 def validate_input(content):
     json_content = get_json_content(content)
-    print(json_content)
     if not json_content:
         return False
     try:
