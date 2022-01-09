@@ -120,4 +120,9 @@ def parse_converted_currency(page):
     if not converted_value:
         return False
     
-    return converted_value.text, 200
+    try:
+        float_output = float(converted_value.text)
+    except:
+        return False
+    
+    return str(float_output), 200
